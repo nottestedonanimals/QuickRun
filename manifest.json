@@ -1,0 +1,10 @@
+{
+  "Name": "QuickRun",
+  "Author": "nottestedonanimals",
+  "Version": "0.0.1",
+  "Description": "Mod test to enable a quicker movement speed for the farmer",
+  "UniqueID": "nottestedonanimals.QuickRun",
+  "EntryDll": "QuickRun.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}

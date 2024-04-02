@@ -3,14 +3,14 @@
 Quick run is a mod for the PC version of Stardew Valley. It enables an on demand speed buff to the player's movement speed.
 
 Currently tested for (Windows):
-SMAPI == 3.9.0
-Stardew Valley == 1.5.4
+SMAPI == 4.0.4
+Stardew Valley == 1.6.0
 
 ## Requirements
 SMAPI
 
 ## Installation Instructions
-Download QuickRun 0.0.1.zip
+Download QuickRun 0.0.2.zip
 Extract it in your Mods folder found in Steam/steamapps/common/Stardew Valley/Mods
 
 ## Usage

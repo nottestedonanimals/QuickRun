@@ -1,6 +1,8 @@
-﻿using StardewModdingAPI;
+﻿using Microsoft.Xna.Framework.Graphics;
+using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.Buffs;
 
 namespace QuickRun {
     public class ModEntry : Mod {
@@ -18,45 +20,42 @@ namespace QuickRun {
             
             this.Helper.Events.Input.ButtonsChanged += SpeedUp;
             this.Helper.Events.Input.ButtonReleased += RemoveSpeed;
-        
+
+
         }
 
         private void RemoveSpeed(object sender, ButtonReleasedEventArgs e) {
 
-            Buff ms = Game1.buffsDisplay.otherBuffs.Find(b => b.source == "QuickRun");
-            //SButtonState spaceState = this.Helper.Input.GetState(SButton.Space);
+            //Buff ms = new Buff(id: "QuickRun.Speed_Sprint", displayName: "Sprint", iconTexture: this.Helper.ModContent.Load<Texture2D>("assets/zoom.png"), iconSheetIndex: 0,
+            //                   duration: this.Config.SpeedDurationMilliseconds, effects: new BuffEffects() { Speed = { this.Config.SpeedBoost } });
 
-            if (ms != null) {
+            
 
-                if (!this.Config.SprintKey.IsDown()) {
-                    ms.removeBuff();
-                    Game1.buffsDisplay.otherBuffs.Remove(ms);
-                }
+            if (!this.Config.SprintKey.IsDown()) {
+                Game1.player.buffs.Remove("QuickRun.Speed_Sprint");
             }
+            
         }
 
         private void SpeedUp(object sender, ButtonsChangedEventArgs e) {
 
-            SButtonState keybindState = this.Helper.Input.GetState(SButton.Space);
+            //SButtonState keybindState = this.Helper.Input.GetState(SButton.Space);
 
-            // Example buff application: https://github.com/minervamaga/FeelingLucky/blob/master/FeelingLucky/FeelingLucky/ModEntry.cs
 
-            Buff ms = Game1.buffsDisplay.otherBuffs.Find(b => b.source == "QuickRun");
+            Buff ms = new Buff(id: "QuickRun.Speed_Sprint", displayName: "Sprint", iconTexture: this.Helper.ModContent.Load<Texture2D>("assets/blank.png"), iconSheetIndex: 0,
+                               duration: this.Config.SpeedDurationMilliseconds, effects: new BuffEffects() { Speed = { this.Config.SpeedBoost } });
+            ms.visible = false;
+
             if (this.Config.SprintKey.IsDown()) {
-                if (ms == null) {
+                Game1.player.buffs.Apply(ms);
 
-                    ms = new Buff(0, 0, 0, 0, 0, 0, 0, 0, 0, this.Config.SpeedBoost, 0, 0, 0, "QuickRun", "QuickRun");
-                    ms.millisecondsDuration = this.Config.SpeedDurationMilliseconds;//2000;
-                    Game1.buffsDisplay.addOtherBuff(ms);
+                
+                if (ms.millisecondsDuration > 0) {
 
                 } else {
-                    if (ms.millisecondsDuration > 0) {
 
-                    } else {
+                    ms.millisecondsDuration = this.Config.SpeedDurationMilliseconds;//2000;
 
-                        ms.millisecondsDuration = this.Config.SpeedDurationMilliseconds;//2000;
-
-                    }
                 }
             }
         }

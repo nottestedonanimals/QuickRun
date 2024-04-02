@@ -39,8 +39,6 @@ namespace QuickRun {
 
         private void SpeedUp(object sender, ButtonsChangedEventArgs e) {
 
-            //SButtonState keybindState = this.Helper.Input.GetState(SButton.Space);
-
 
             Buff ms = new Buff(id: "QuickRun.Speed_Sprint", displayName: "Sprint", iconTexture: this.Helper.ModContent.Load<Texture2D>("assets/blank.png"), iconSheetIndex: 0,
                                duration: this.Config.SpeedDurationMilliseconds, effects: new BuffEffects() { Speed = { this.Config.SpeedBoost } });

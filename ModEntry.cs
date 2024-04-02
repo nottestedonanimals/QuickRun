@@ -25,12 +25,7 @@ namespace QuickRun {
         }
 
         private void RemoveSpeed(object sender, ButtonReleasedEventArgs e) {
-
-            //Buff ms = new Buff(id: "QuickRun.Speed_Sprint", displayName: "Sprint", iconTexture: this.Helper.ModContent.Load<Texture2D>("assets/zoom.png"), iconSheetIndex: 0,
-            //                   duration: this.Config.SpeedDurationMilliseconds, effects: new BuffEffects() { Speed = { this.Config.SpeedBoost } });
-
-            
-
+         
             if (!this.Config.SprintKey.IsDown()) {
                 Game1.player.buffs.Remove("QuickRun.Speed_Sprint");
             }
@@ -41,20 +36,12 @@ namespace QuickRun {
 
 
             Buff ms = new Buff(id: "QuickRun.Speed_Sprint", displayName: "Sprint", iconTexture: this.Helper.ModContent.Load<Texture2D>("assets/blank.png"), iconSheetIndex: 0,
-                               duration: this.Config.SpeedDurationMilliseconds, effects: new BuffEffects() { Speed = { this.Config.SpeedBoost } });
+                               duration: Buff.ENDLESS, effects: new BuffEffects() { Speed = { this.Config.SpeedBoost } });
             ms.visible = false;
 
             if (this.Config.SprintKey.IsDown()) {
                 Game1.player.buffs.Apply(ms);
 
-                
-                if (ms.millisecondsDuration > 0) {
-
-                } else {
-
-                    ms.millisecondsDuration = this.Config.SpeedDurationMilliseconds;//2000;
-
-                }
             }
         }
     }

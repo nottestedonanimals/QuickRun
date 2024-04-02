@@ -2,7 +2,7 @@
   <PropertyGroup>
     <RootNamespace>QuickRun</RootNamespace>
     <AssemblyName>QuickRun</AssemblyName>
-    <Version>0.0.2</Version>
+    <Version>1.0.0</Version>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>Latest</LangVersion>
   </PropertyGroup>

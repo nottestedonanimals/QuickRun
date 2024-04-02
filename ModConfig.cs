@@ -8,8 +8,8 @@
 namespace QuickRun {
     class ModConfig {
 
-        public int SpeedBoost { get; set; } = 2;
+        public int SpeedBoost { get; set; } = 10;
         public KeybindList SprintKey { get; set; } = KeybindList.Parse("Space, LeftStick");
-        public int SpeedDurationMilliseconds { get; set; } = 2000;
+
     }
 }

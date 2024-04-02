@@ -22,4 +22,3 @@ The behavior of this mod can be changed via the config.json file, which should b
 
 - SpeedBoost - the size of the speed buff given to the player when the sprint button is triggered (must be an integer)
 - SprintKey - the keybinding for the sprint key. Currently binds it to the Space Bar on the keyboard and clicking the left stick on the controller. This can be set to whatever buttons you would like.<br>Refer to https://stardewvalleywiki.com/Modding:Player_Guide/Key_Bindings for the correct values for this setting.
-- SpeedDurationMilliseconds - The length of the buff duration. Since the buff is removed when the button is released this doesn't affect the actual behavior. But because the buff is continually<br>reapplied, the buff icon in the top will flash when this happens. If that annoys you increase this value and it will flash less.<br>I kept the value low incase of bugs, this way the buffs will be quick to be removed.
